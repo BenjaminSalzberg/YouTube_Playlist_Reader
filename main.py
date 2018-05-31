@@ -17,6 +17,7 @@ def main():
     default_url = "https://www.youtube.com/playlist?list=PL90229471516D05ED"
     url = input("Enter the URL of the playlist. Must be HTTPS"
                 "\nexample:\nhttps://www.youtube.com/playlist?list=PL90229471516D05ED\n")
+    # the example is to Miracle of Sounds Music Playlist
     if url.__contains__(string_start):
         print("URL is " + url)
     else:
