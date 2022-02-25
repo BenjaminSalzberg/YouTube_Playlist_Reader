@@ -16,18 +16,18 @@ def main():
     links = []
     string_start = "https://www.youtube.com"
     default_url = "https://www.youtube.com/playlist?list=PL90229471516D05ED"
-    # url = input("Enter the URL of the playlist. Must be HTTPS"
-    #             "\nexample:\nhttps://www.youtube.com/playlist?list=PL90229471516D05ED\n")
-    # the example is to Miracle of Sounds Music Playlist
-    # if url.__contains__(string_start):
-    #     print("URL is " + url)
-    # else:
-    #     url = default_url
-    #     print("Bad URL\nURL is " + url)
-    # direct_path = input("Enter the Direct Path of the playlist or enter nothing and it will use the root Music folder. "
-    #                     "\nEnsure that you add the slash at the end"
-    #                     "\nexample:\nD:/Users/\n")
-    url = default_url
+    url = input("Enter the URL of the playlist. Must be HTTPS"
+                "\nexample:\nhttps://www.youtube.com/playlist?list=PL90229471516D05ED\n")
+    the example is to Miracle of Sounds Music Playlist
+    if url.__contains__(string_start):
+        print("URL is " + url)
+    else:
+        url = default_url
+        print("Bad URL\nURL is " + url)
+    direct_path = input("Enter the Direct Path of the playlist or enter nothing and it will use the root Music folder. "
+                        "\nEnsure that you add the slash at the end"
+                        "\nexample:\nD:/Users/\n")
+    # url = default_url
     driver = webdriver.Firefox()
     driver.get(url)
     the_page = driver.page_source
@@ -70,7 +70,7 @@ def main():
         path = direct_path
         # check if the direct path you are using exists and use it, otherwise your root Music folder
     print("Path is " + path)
-    newpath = os.path.normpath(path+"/YT_PLaylist"+identity+".xspf")
+    newpath = os.path.normpath(path+"/YT_PLaylist.xspf")
     file = open(newpath, "w")
     file.write("""<?xml version="1.0" encoding="UTF-8"?>\n""")
     file.write("""<playlist version="1" xmlns="http://xspf.org/ns/0/">\n""")
