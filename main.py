@@ -69,7 +69,8 @@ def main():
         path = direct_path
         # check if the direct path you are using exists and use it, otherwise your root Music folder
     print("Path is " + path)
-    file = open(os.path.normpath(path+"/YT_PLaylist"+identity+".xspf"), "w")
+    newpath = os.path.normpath(path+"/YT_PLaylist"+identity+".xspf")
+    file = open(newpath, "w")
     file.write("""<?xml version="1.0" encoding="UTF-8"?>\n""")
     file.write("""<playlist version="1" xmlns="http://xspf.org/ns/0/">\n""")
     file.write("""<trackList>\n""")
